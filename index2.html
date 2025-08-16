@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма + Таблица</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 10px;
+    }
+    input, select, textarea {
+      margin-bottom: 15px;
+      padding: 5px;
+      border: none;
+      border: 1px solid grey;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    button {
+      padding: 5px 20px;
+      border-radius: 5px;
+      color: lawngreen;
+      background: green;
+      border: 1px solid green;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Колдонуучуларды каттоо</h1>
+  
+  <form id="userForm">
+    <label for="name">Аты-жөнү:</label>
+    <input type="text" id="name" name="name" required><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    
+    <label for="country">Өлкө:</label>
+    <select id="country" name="country">
+      <option value="kg">Кыргызстан</option>
+      <option value="kz">Казакстан</option>
+      <option value="uz">Өзбекстан</option>
+    </select><br>
+    
+    <button type="submit">Кошуу</button>
+  </form>
+  
+  <h2>Колдонуучулардын тизмеси</h2>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Аты-жөнү</th>
+        <th>Email</th>
+        <th>Өлкө</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JavaScript аркылуу толтурулат -->
+    </tbody>
+  </table>
+  
+  <script>
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Форманын маанилерин алуу
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const country = document.getElementById('country').value;
+      const countryText = document.getElementById('country').options[document.getElementById('country').selectedIndex].text;
+      
+      // Жаңы катар кошуу
+      const table = document.querySelector('#userTable tbody');
+      const rowCount = table.rows.length;
+      const row = table.insertRow(rowCount);
+      
+      // Жаны уячаларды кошуу
+      row.insertCell(0).textContent = rowCount + 1;
+      row.insertCell(1).textContent = name;
+      row.insertCell(2).textContent = email;
+      row.insertCell(3).textContent = countryText;
+      
+      // Форманы тазалоо
+      document.getElementById('userForm').reset();
+    });
+  </script>
+</body>
+</html>

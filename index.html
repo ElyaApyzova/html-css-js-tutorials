@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table,Media,Form</title>
+</head>
+<body>
+  <form action="/submit" method="post">
+  <!-- Текст талаасы -->
+  <label for="name">Атыңыз:</label>
+  <input type="text" id="name" name="username"><br>
+  
+  <!-- Пароль талаасы -->
+  <label for="pass">Пароль:</label>
+  <input type="password" id="pass" name="password"><br>
+  
+  <!-- Радио баскычтары -->
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Эркек</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Аял</label><br>
+  
+  <!-- Тандоо кутучалары -->
+  <input type="checkbox" id="bike" name="vehicle1" value="Bike">
+  <label for="bike"> Велосипед</label>
+  <input type="checkbox" id="car" name="vehicle2" value="Car">
+  <label for="car"> Машина</label><br>
+  
+  <!-- Тандоо тизмеси -->
+  <label for="cars">Машинаны тандаңыз:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+  </select><br>
+  
+  <!-- Текст аймагы -->
+  <label for="message">Билдирүү:</label>
+  <textarea id="message" name="message" rows="4" cols="30"></textarea><br>
+  
+  <!-- Жөнөтүү баскычы -->
+  <input type="submit" value="Жөнөтүү">
+</form>
+
+
+<table border="1">
+  <caption>Окуучулардын тизмеси</caption>
+  <tr>
+    <th>№</th>
+    <th>Аты-жөнү</th>
+    <th>Бөлүмү</th>
+    <th>Баасы</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Айпери Жолдошева</td>
+    <td>Информатика</td>
+    <td>95</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Эркин Садыков</td>
+    <td>Математика</td>
+    <td>87</td>
+  </tr>
+</table>
+
+
+<table border="1">
+  <tr>
+    <th rowspan="3">№</th>
+    <th colspan="3">Окуучу</th>
+    <th rowspan="2">Баасы</th>
+  </tr>
+  <tr>
+    <th>Аты</th>
+    <th>Фамилиясы</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Айпери</td>
+    <td>Жолдошева</td>
+    <td>95</td>
+  </tr>
+</table>
+
+<img src="photo.jpg" alt="Сүрөттүн сүрөттөмөсү" width="500" height="300">
+
+<audio controls>
+  <source src="аудио.mp3" type="audio/mpeg">
+  Браузериңиз аудио элементтерди колдобойт.
+</audio>
+
+<video width="640" height="360" controls>
+  <source src="видео.mp4" type="video/mp4">
+  Браузериңиз видео элементтерди колдобойт.
+</video>
+
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/VIDEO_ID" 
+frameborder="0" allowfullscreen></iframe>
+
+<embed src="документ.pdf" type="application/pdf" width="100%" height="600px">
+
+  <video controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Браузериңиз видео элементтерди колдобойт.
+</video>
+
+<figure>
+  <img src="photo.jpg" alt="Мисал сүрөт">
+  <figcaption>Сүрөттүн сүрөттөмөсү</figcaption>
+</figure>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="чоң_сүрөт.jpg">
+  <source media="(min-width: 465px)" srcset="кичинекей_сүрөт.jpg">
+  <img src="дефолт_сүрөт.jpg" alt="Мисал сүрөт">
+</picture>
+
+<figure>
+  <img src="диаграмма.jpg" alt="Сатыктардын өсүшү 2020-2023">
+  <figcaption>1-сүрөт: 2020-2023-жылдардагы кварталдык сатыктардын өсүшү</figcaption>
+</figure>
+
+<picture>
+  <source media="(min-width: 1200px)" srcset="чоң.jpg">
+  <source media="(min-width: 800px)" srcset="орто.jpg">
+  <source media="(min-width: 400px)" srcset="кичине.jpg">
+  <img src="резерв.jpg" alt="Адаптивдүү сүрөт">
+</picture>
+</body>
+</html>
